@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+
+# Environment files
+.env
+.env.dev
+.env.prod
+
+# IDE
+.vscode/
+.idea/
+
+# Docker
+postgres_data/
+
+# OS
+.DS_Store
+
+# Testing
+.pytest_cache/
+
+# Type checking
+.mypy_cache/
