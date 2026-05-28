@@ -14,6 +14,13 @@ from app.auth import (
 router=APIRouter()
 
 
+@router.get("/health")
+def health_check():
+    return {
+        "status": "healthy-v2"
+    }
+
+
 @router.post("/signup")
 def signup(user:UserCreate, db: Session=Depends(get_db)):
     existing_user=db.query(User).filter(
