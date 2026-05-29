@@ -52,3 +52,19 @@ upgrade:
 current:
 	docker exec -it auth-api-dev \
 	alembic current
+
+
+dev:
+	docker compose -f docker-compose.dev.yml up --build
+
+prod:
+	docker compose -f docker-compose.prod.yml up -d --build
+
+migrate:
+	docker compose -f docker-compose.prod.yml run --rm api alembic upgrade head
+
+logs:
+	docker compose -f docker-compose.prod.yml logs -f
+
+down:
+	docker compose -f docker-compose.prod.yml down
