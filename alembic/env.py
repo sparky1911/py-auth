@@ -5,7 +5,7 @@ from sqlalchemy import pool
 
 from alembic import context
 from app.database import Base
-from app.models import User
+from app.models import User,RefreshToken
 from dotenv import load_dotenv
 import os
 
@@ -51,7 +51,7 @@ def run_migrations_offline() -> None:
 
     """
     url = database_url
-    
+
     context.configure(
         url=url,
         target_metadata=target_metadata,
