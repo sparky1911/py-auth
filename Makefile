@@ -38,3 +38,17 @@ build:
 
 run:
 	docker run -p 8000:8000 auth-service
+
+
+
+revision:
+	docker exec -it auth-api-dev \
+	alembic revision --autogenerate -m "$(msg)"
+
+upgrade:
+	docker exec -it auth-api-dev \
+	alembic upgrade head
+
+current:
+	docker exec -it auth-api-dev \
+	alembic current
